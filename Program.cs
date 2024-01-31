@@ -63,6 +63,8 @@ if (!app.Environment.IsDevelopment())
 app.UseStaticFiles();
 app.MapRazorPages();
 app.UseOutputCache();
+var birhdate = new DateTimeOffset(new DateTime(2015, 12, 31));
+Console.WriteLine(birhdate);
 
 // ##### Map endpoints
 

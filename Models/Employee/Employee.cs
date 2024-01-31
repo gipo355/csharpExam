@@ -10,7 +10,7 @@ public class Employee
 
   public string? Surname { get; set; }
 
-  public DateOnly BirthDate { get; set; }
+  public DateTimeOffset BirthDate { get; set; }
 
   public string? Gender { get; set; }
 

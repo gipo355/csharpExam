@@ -30,6 +30,10 @@ public class AppDbContext : DbContext
     // modelBuilder.Entity<Blog>().ComplexProperty
     // SEED town data
     //
+
+    // NOTE: offset is required for postgresql
+    // var birhdate = new DateTimeOffset().Date;
+    var birthdate = new DateTimeOffset(new DateTime(2015, 12, 31));
     var padovaId = Guid.NewGuid();
     var vicenzaId = Guid.NewGuid();
     var trevisoId = Guid.NewGuid();
@@ -75,7 +79,7 @@ public class AppDbContext : DbContext
           Id = Guid.NewGuid(),
           Name = "John1",
           Surname = "Doe",
-          BirthDate = new DateOnly(),
+          BirthDate = birthdate,
           Gender = "Male",
           Email = "ok@gipo.dev",
           TownId = padovaId
@@ -89,7 +93,7 @@ public class AppDbContext : DbContext
           Id = Guid.NewGuid(),
           Name = "John2",
           Surname = "Doe",
-          BirthDate = new DateOnly(),
+          BirthDate = birthdate,
           Gender = "Male",
           Email = "ok@gipo.dev",
           TownId = vicenzaId
@@ -103,7 +107,7 @@ public class AppDbContext : DbContext
           Id = Guid.NewGuid(),
           Name = "John3",
           Surname = "Doe",
-          BirthDate = new DateOnly(),
+          BirthDate = birthdate,
           Gender = "Male",
           Email = "ok@gipo.dev",
           TownId = trevisoId
