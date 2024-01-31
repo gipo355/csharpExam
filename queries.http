@@ -1,0 +1,31 @@
+GET http://localhost:5090/api/v1/animals
+
+###
+
+GET http://localhost:5090/api/v1/animals/1
+
+###
+
+POST http://localhost:5118/api/v1/animals
+content-type: application/json
+
+{
+    "name": "Test",
+    "age": 5,
+    "type": "Mammal"
+}
+
+###
+
+DELETE http://localhost:5090/api/v1/animals/1
+
+###
+
+PATCH http://localhost:5090/api/v1/animals/1
+Content-Type: application/json
+
+{
+    "name": "Changed",
+    "age": 5,
+    "type": "Mammal"
+}
