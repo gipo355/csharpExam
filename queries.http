@@ -10,11 +10,14 @@ POST http://localhost:5118/api/v1/employees
 content-type: application/json
 
 {
-    "name": "Foo",
-    "surname": "Bar",
-    "gender": "male",
-    "email": "foo@gipo.dev",
-    "town": "Padova"
+  "name": "Foo",
+  "surname": "Bar",
+  "gender": "male",
+  "email": "foo@gipo.dev",
+  "birthdate": "2015-12-30T23:00:00+00",
+  "town": {
+        "name": "Padova"
+  }
 }
 
 ###

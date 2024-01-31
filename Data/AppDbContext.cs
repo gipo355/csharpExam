@@ -26,12 +26,16 @@ public class AppDbContext : DbContext
 
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {
+    // set unique fields constraints // doesn't work
+    // modelBuilder.Entity<Employee>().HasIndex(i => i.Email).IsUnique();
+    // modelBuilder.Entity<Town>().HasIndex(i => i.Name).IsUnique();
     // modelBuilder.Entity<Blog>().Property(e => e.BlogId).HasDefaultValueSql("now()");
     // modelBuilder.Entity<Blog>().ComplexProperty
 
     // SEED town data
     // NOTE: offset is required for postgresql
-    var birthdate = new DateTimeOffset(new DateTime(2015, 12, 31));
+    // var birthdate = new DateTimeOffset(new DateTime(2015, 12, 31));
+    var birthdate = new DateTime(2015, 12, 31).ToUniversalTime();
     var padovaId = Guid.NewGuid();
     var vicenzaId = Guid.NewGuid();
     var trevisoId = Guid.NewGuid();

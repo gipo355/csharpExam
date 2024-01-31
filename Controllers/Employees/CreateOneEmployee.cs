@@ -40,7 +40,8 @@ public static partial class EmployeesController
         );
       }
 
-      employee.BirthDate = new DateTimeOffset(new DateTime());
+      // required for psql to convert to UTC
+      employee.BirthDate = employee.BirthDate.ToUniversalTime();
 
       // if (employee.Name is "" or null || employee.Email is "" or null)
       // {
