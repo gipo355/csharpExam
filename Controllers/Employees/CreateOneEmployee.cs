@@ -1,6 +1,6 @@
 namespace Controllers.Employee;
 
-using System.Text.Json;
+// using System.Text.Json;
 using Data;
 using FluentValidation;
 using Models.Employee;
@@ -36,24 +36,24 @@ public class CreateEmployeeValidator : AbstractValidator<CreateOneRequest>
 {
   public CreateEmployeeValidator()
   {
-    RuleFor(x => x.Name).NotEmpty().NotNull().WithMessage("Name is required!");
+    _ = this.RuleFor(x => x.Name).NotEmpty().NotNull().WithMessage("Name is required!");
 
-    RuleFor(x => x.Email)
+    _ = this.RuleFor(x => x.Email)
       .NotEmpty()
       // .NotNull()
       .EmailAddress()
       .WithMessage("A valid email is required!");
 
-    RuleFor(x => x.Surname).NotEmpty().NotNull().WithMessage("Email is required!");
+    _ = this.RuleFor(x => x.Surname).NotEmpty().NotNull().WithMessage("Email is required!");
 
-    RuleFor(x => x.Gender).NotEmpty().NotNull().WithMessage("Gender is required!");
+    _ = this.RuleFor(x => x.Gender).NotEmpty().NotNull().WithMessage("Gender is required!");
 
-    RuleFor(x => x.BirthDate)
+    _ = this.RuleFor(x => x.BirthDate)
       .NotEmpty()
       // .NotNull()
       .WithMessage("BirthDate is required!");
 
-    RuleFor(x => x.Town).NotEmpty().NotNull().WithMessage("Town Name is required!");
+    _ = this.RuleFor(x => x.Town).NotEmpty().NotNull().WithMessage("Town Name is required!");
   }
 }
 

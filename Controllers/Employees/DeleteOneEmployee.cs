@@ -11,6 +11,19 @@ public static partial class EmployeesController
     {
       Console.WriteLine(id);
 
+      var employee = await db.Employees.FindAsync(id);
+
+      if (employee == null)
+      {
+        context.Response.StatusCode = 404;
+
+        await context.Response.WriteAsJsonAsync(
+          new { ok = false, message = "Employee not found!" }
+        );
+
+        return;
+      }
+
       db.Employees.Remove(new Employee { Id = id });
 
       await db.SaveChangesAsync();
