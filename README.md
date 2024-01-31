@@ -61,11 +61,32 @@ docker
 docker-compose
 ```
 
-0. add env variables
-   `cp .env.default -> .env`
+1. restore dependencies
 
-1. start Docker
-   `make docker`
+   ```
+   make restore
+   ```
 
-2. restore and start the server:
-   `make dev`
+2. add env variables
+
+   ```
+   cp .env.default -> .env
+   ```
+
+3. start Docker
+
+   ```
+   make docker
+   ```
+
+4. Prepare the db
+
+   ```
+    make db-update
+   ```
+
+5. start the server:
+
+   ```
+   make dev
+   ```

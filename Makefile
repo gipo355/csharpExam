@@ -18,6 +18,7 @@ db-drop:
 	@dotnet ef database drop
 	@echo "Done."
 
+
 db-reset: db-drop db-update
 
 restore:

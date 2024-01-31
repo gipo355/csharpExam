@@ -37,6 +37,7 @@ namespace ItsWdfs.Csharp.Exam.Migrations
                     BirthDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     Gender = table.Column<string>(type: "text", nullable: true),
                     Email = table.Column<string>(type: "text", nullable: true),
+                    FiscalCode = table.Column<string>(type: "text", nullable: true),
                     TownId = table.Column<Guid>(type: "uuid", nullable: true)
                 },
                 constraints: table =>
@@ -54,19 +55,19 @@ namespace ItsWdfs.Csharp.Exam.Migrations
                 columns: new[] { "Id", "CodiceCatastale", "Name", "Province" },
                 values: new object[,]
                 {
-                    { new Guid("4e8db196-df99-42f4-a2b5-5647b2891ed8"), "G224", "Padova", "PD" },
-                    { new Guid("c154caa7-e053-4b24-8377-d261f559a1da"), "L840", "Vicenza", "VI" },
-                    { new Guid("cd27eac6-d6bd-4208-b516-c641a458de9f"), "L407", "Treviso", "TV" }
+                    { new Guid("93a30cd4-a06f-4fec-9219-699f5d710dd2"), "G224", "Padova", "PD" },
+                    { new Guid("b469698c-85cc-49fb-ac52-de4321eb78f9"), "L840", "Vicenza", "VI" },
+                    { new Guid("c81e07c2-4a95-4ab0-8365-75da1d94a57f"), "L407", "Treviso", "TV" }
                 });
 
             migrationBuilder.InsertData(
                 table: "Employees",
-                columns: new[] { "Id", "BirthDate", "Email", "Gender", "Name", "Surname", "TownId" },
+                columns: new[] { "Id", "BirthDate", "Email", "FiscalCode", "Gender", "Name", "Surname", "TownId" },
                 values: new object[,]
                 {
-                    { new Guid("c559d086-2abf-4811-b86c-5fe3682ff3ca"), new DateTime(2015, 12, 30, 23, 0, 0, 0, DateTimeKind.Utc), "ok@gipo.dev", "Male", "John1", "Doe", new Guid("4e8db196-df99-42f4-a2b5-5647b2891ed8") },
-                    { new Guid("c7062ac4-439a-485a-83ac-3a13a9d1b85d"), new DateTime(2015, 12, 30, 23, 0, 0, 0, DateTimeKind.Utc), "ok@gipo.dev", "Male", "John3", "Doe", new Guid("cd27eac6-d6bd-4208-b516-c641a458de9f") },
-                    { new Guid("e436dbaa-a076-43ea-8bcb-4a4470d3e2d4"), new DateTime(2015, 12, 30, 23, 0, 0, 0, DateTimeKind.Utc), "ok@gipo.dev", "Male", "John2", "Doe", new Guid("c154caa7-e053-4b24-8377-d261f559a1da") }
+                    { new Guid("cd46f869-acf3-44b8-a30e-9f3a35e67af8"), new DateTime(2015, 12, 30, 23, 0, 0, 0, DateTimeKind.Utc), "ok@gipo.dev", null, "Male", "John1", "Doe", new Guid("93a30cd4-a06f-4fec-9219-699f5d710dd2") },
+                    { new Guid("ed9c4f97-da6d-482e-bf83-31cd2df461b0"), new DateTime(2015, 12, 30, 23, 0, 0, 0, DateTimeKind.Utc), "ok@gipo.dev", null, "Male", "John3", "Doe", new Guid("c81e07c2-4a95-4ab0-8365-75da1d94a57f") },
+                    { new Guid("fe68413b-4e15-4a06-9888-076cc7e19b8b"), new DateTime(2015, 12, 30, 23, 0, 0, 0, DateTimeKind.Utc), "ok@gipo.dev", null, "Male", "John2", "Doe", new Guid("b469698c-85cc-49fb-ac52-de4321eb78f9") }
                 });
 
             migrationBuilder.CreateIndex(

@@ -34,6 +34,9 @@ namespace ItsWdfs.Csharp.Exam.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("text");
 
+                    b.Property<string>("FiscalCode")
+                        .HasColumnType("text");
+
                     b.Property<string>("Gender")
                         .HasColumnType("text");
 
@@ -55,33 +58,33 @@ namespace ItsWdfs.Csharp.Exam.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("c559d086-2abf-4811-b86c-5fe3682ff3ca"),
+                            Id = new Guid("cd46f869-acf3-44b8-a30e-9f3a35e67af8"),
                             BirthDate = new DateTime(2015, 12, 30, 23, 0, 0, 0, DateTimeKind.Utc),
                             Email = "ok@gipo.dev",
                             Gender = "Male",
                             Name = "John1",
                             Surname = "Doe",
-                            TownId = new Guid("4e8db196-df99-42f4-a2b5-5647b2891ed8")
+                            TownId = new Guid("93a30cd4-a06f-4fec-9219-699f5d710dd2")
                         },
                         new
                         {
-                            Id = new Guid("e436dbaa-a076-43ea-8bcb-4a4470d3e2d4"),
+                            Id = new Guid("fe68413b-4e15-4a06-9888-076cc7e19b8b"),
                             BirthDate = new DateTime(2015, 12, 30, 23, 0, 0, 0, DateTimeKind.Utc),
                             Email = "ok@gipo.dev",
                             Gender = "Male",
                             Name = "John2",
                             Surname = "Doe",
-                            TownId = new Guid("c154caa7-e053-4b24-8377-d261f559a1da")
+                            TownId = new Guid("b469698c-85cc-49fb-ac52-de4321eb78f9")
                         },
                         new
                         {
-                            Id = new Guid("c7062ac4-439a-485a-83ac-3a13a9d1b85d"),
+                            Id = new Guid("ed9c4f97-da6d-482e-bf83-31cd2df461b0"),
                             BirthDate = new DateTime(2015, 12, 30, 23, 0, 0, 0, DateTimeKind.Utc),
                             Email = "ok@gipo.dev",
                             Gender = "Male",
                             Name = "John3",
                             Surname = "Doe",
-                            TownId = new Guid("cd27eac6-d6bd-4208-b516-c641a458de9f")
+                            TownId = new Guid("c81e07c2-4a95-4ab0-8365-75da1d94a57f")
                         });
                 });
 
@@ -107,21 +110,21 @@ namespace ItsWdfs.Csharp.Exam.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("4e8db196-df99-42f4-a2b5-5647b2891ed8"),
+                            Id = new Guid("93a30cd4-a06f-4fec-9219-699f5d710dd2"),
                             CodiceCatastale = "G224",
                             Name = "Padova",
                             Province = "PD"
                         },
                         new
                         {
-                            Id = new Guid("c154caa7-e053-4b24-8377-d261f559a1da"),
+                            Id = new Guid("b469698c-85cc-49fb-ac52-de4321eb78f9"),
                             CodiceCatastale = "L840",
                             Name = "Vicenza",
                             Province = "VI"
                         },
                         new
                         {
-                            Id = new Guid("cd27eac6-d6bd-4208-b516-c641a458de9f"),
+                            Id = new Guid("c81e07c2-4a95-4ab0-8365-75da1d94a57f"),
                             CodiceCatastale = "L407",
                             Name = "Treviso",
                             Province = "TV"
