@@ -15,7 +15,7 @@ public record CreateOneResponse : IEmployeeResponse
 
 public record CreateOneRequest
 {
-  public Guid? Id { get; set; }
+  // public Guid? Id { get; set; }
 
   public string? Name { get; set; }
 
@@ -27,7 +27,7 @@ public record CreateOneRequest
 
   public string? Email { get; set; }
 
-  public string? FiscalCode { get; set; }
+  // public string? FiscalCode { get; set; }
 
   public string? Town { get; set; }
 }
@@ -67,7 +67,7 @@ public static partial class EmployeesController
   {
     try
     {
-      Console.WriteLine(JsonSerializer.Serialize(employee));
+      // Console.WriteLine(JsonSerializer.Serialize(employee));
 
       var validator = new CreateEmployeeValidator();
 
@@ -119,8 +119,9 @@ public static partial class EmployeesController
         Gender = employee.Gender,
         Email = employee.Email,
         // TODO: calc fiscal code and add here as pre hook
-        FiscalCode = employee.FiscalCode,
-        TownId = town.Id
+        // FiscalCode = employee.FiscalCode,
+        // TownId = town.Id
+        Town = town
       };
 
       db.Employees.Add(newEmployee);
