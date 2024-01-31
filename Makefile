@@ -4,25 +4,30 @@
 db-migrate:
 	@echo "Migrating database..."
 	# @dotnet ef migrations add $(name) $(MS_BUILD_PATH)
-	@dotnet ef migrations add $(name) 
+	@dotnet ef migrations add $(name)
 	@echo "Done."
 
 db-update:
 	@echo "Updating database..."
 	# @dotnet ef database update $(MS_BUILD_PATH)
-	@dotnet ef database update 
+	@dotnet ef database update
 	@echo "Done."
 
 db-drop:
 	@echo "Dropping database..."
-	@dotnet ef database drop 
+	@dotnet ef database drop
 	@echo "Done."
 
 db-reset: db-drop db-update
 
-dev:
+restore:
+	@echo "Restoring packages..."
+	@dotnet restore
+	@echo "Done."
+
+dev: restore
 	@echo "Running development server..."
 	@dotnet watch run
 
 docker:
-	docker compose up --build --no-recreate --detach
+	@docker compose up --build --no-recreate --detach

@@ -45,17 +45,27 @@ HttpDelete: eliminazione dipendente tramite invio DipendenteID. Se il Dipendente
 HttpPut: aggiornamento della Email del Dipendente tramite invio del DipendenteID e della nuova Email. Se il DipendenteID non esiste lo comunica
 HttpGet: restituisce il CodiceFiscale del Dipendente inviato tramite DipendenteID. Se il DipendenteID non esiste lo comunica
 
+3 consonanti cognome, nome , ultime 2 anno nascita, lettera mese nascita,2 cifre giorno nascita, codice catastale, carattere di controllo
+
 Nelle chiamate che ricevono dati implementare i test di obbligatorietà dei dati (per esempio la numero 2.3 deve ricevere dati non vuoti altrimenti comunica un messaggio di errore nel Response)
 
 Zippare la cartella della soluzione in un unico file CognomeNome.zip e inviarlo a <roberto.luongo@itsdigitalacademy.com> tramite wetransfer.com
 
 # how to run
 
-**requirement**
+**requirements**
+
+```
 make
 docker
 docker-compose
+```
 
-env file
+0. add env variables
+   `cp .env.default -> .env`
 
-make dev (will dotnet restore, set db etc)
+1. start Docker
+   `make docker`
+
+2. restore and start the server:
+   `make dev`
