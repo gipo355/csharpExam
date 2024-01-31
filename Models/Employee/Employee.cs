@@ -17,6 +17,8 @@ public class Employee
 
   public string? Email { get; set; }
 
+  public string? FiscalCode { get; set; }
+
   public Guid? TownId { get; set; }
   public Town? Town { get; set; }
 }
