@@ -1,15 +1,11 @@
-# PROJECT_ROOT := '../../..'
-# MS_BUILD_PATH := --msbuildprojectextensionspath $(PROJECT_ROOT)/dist/intermediates/csharp/20240124/BaseApi/obj
 
 db-migrate:
 	@echo "Migrating database..."
-	# @dotnet ef migrations add $(name) $(MS_BUILD_PATH)
 	@dotnet ef migrations add $(name)
 	@echo "Done."
 
 db-update:
 	@echo "Updating database..."
-	# @dotnet ef database update $(MS_BUILD_PATH)
 	@dotnet ef database update
 	@echo "Done."
 
