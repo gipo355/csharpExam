@@ -9,16 +9,19 @@
 
 # todo
 
+- [ ] updateOne with Town included
+- [ ] town in createOne
+
 - [ ] how to make fields required, unique, other props on db?
 - [ ] don't show empty fields in response ( null, etc )
-- [ ] add query params for Filtering - sorting etc
+- [ ] add query params for Filtering — sorting etc
 - [ ] set unique fields for email in DB
 - [ ] use some variables for status codes
 - [ ] convert all strings to lowercase on insert
 - [ ] updating FK townID not working
 - [ ] add hooks for Fiscal Code
 - [ ] test all endpoints
-- [ ] clean up code - refactor and DRY
+- [ ] clean up code — refactor and DRY
 
 # test
 
@@ -79,6 +82,8 @@ codice fiscale:
 
 **requirements**
 
+- [dotnet 8](https://dotnet.microsoft.com/en-us/download)
+- [git](https://git-scm.com/downloads)
 - [make](https://www.gnu.org/software/make/)
 - [docker-compose](https://docs.docker.com/compose/install/)
 
