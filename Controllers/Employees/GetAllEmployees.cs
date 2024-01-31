@@ -7,6 +7,7 @@ using Models.Employee;
 public record GetAllResponse : IEmployeeResponse
 {
   public bool ok { get; set; }
+  public bool employees { get; set; }
   public string? message { get; set; }
 
   public List<Employee>? data { get; set; }
@@ -30,7 +31,14 @@ public static partial class EmployeesController
       // context.Response.Headers.ContentType = "application/json";
       context.Response.Headers.SetCookie = "testCookie=testValue";
 
-      await context.Response.WriteAsJsonAsync(new { status = "success", data = employees });
+      await context.Response.WriteAsJsonAsync(
+        new
+        {
+          status = "success",
+          employees = employees.Count,
+          data = employees
+        }
+      );
 
       return;
     }

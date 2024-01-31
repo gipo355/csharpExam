@@ -11,7 +11,7 @@ content-type: application/json
 
 {
     "name": "Foo",
-    "surname": 5,
+    "surname": "Bar",
     "gender": "male",
     "email": "foo@gipo.dev",
     "town": "Padova"

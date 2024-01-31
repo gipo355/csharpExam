@@ -24,6 +24,32 @@ public static partial class EmployeesController
     {
       Console.WriteLine(JsonSerializer.Serialize(employee));
 
+      var validator = new EmployeeValidator();
+
+      var validationResult = validator.Validate(employee);
+      if (!validationResult.IsValid)
+      {
+        var message = "";
+        foreach (var fail in validationResult.Errors)
+        {
+          message += string.Format("{0}", fail.ErrorMessage);
+        }
+        Results.StatusCode(400);
+        return Results.Json(
+          new CreateOneResponse { ok = false, message = "Invalid employee data!" + message }
+        );
+      }
+
+      employee.BirthDate = new DateTimeOffset(new DateTime());
+
+      // if (employee.Name is "" or null || employee.Email is "" or null)
+      // {
+      //   Results.StatusCode(400);
+      //   return Results.Json(new CreateOneResponse { ok = false, message = "Name is required!" });
+      // }
+      // {
+      // }
+
       db.Employees.Add(employee);
       await db.SaveChangesAsync();
 

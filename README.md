@@ -52,3 +52,10 @@ Zippare la cartella della soluzione in un unico file CognomeNome.zip e inviarlo 
 # how to run
 
 **requirement**
+make
+docker
+docker-compose
+
+env file
+
+make dev (will dotnet restore, set db etc)

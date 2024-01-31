@@ -16,7 +16,7 @@ public static partial class EmployeesController
       await db.SaveChangesAsync();
 
       await context.Response.WriteAsJsonAsync(
-        new { ok = true, message = "Animal deleted successfully!" }
+        new { ok = true, message = "Employee deleted successfully!" }
       );
 
       return;
