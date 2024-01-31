@@ -1,20 +1,19 @@
-namespace Models.Country;
+namespace Models.Town;
 
-using Models.Animal;
+using Models.Employee;
 
 // using System.Runtime.Serialization;
 // using System.Collections.Generic;
 // using System.ComponentModel.DataAnnotations;
 // using System.ComponentModel.DataAnnotations.Schema;
 
-public class Country
+public class Town
 {
   public Guid? Id { get; set; }
 
-  // [Index(IsUnique = true)]
   public string? Name { get; set; }
 
-  // [IgnoreDataMember]
-  // [JsonIgnore]
-  public List<Animal>? Animals { get; set; }
+  public string? Province { get; set; }
+
+  public List<Employee>? Employees { get; set; }
 }

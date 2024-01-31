@@ -1,25 +1,54 @@
-<https://learn.microsoft.com/en-us/ef/core/managing-schemas/migrations/?tabs=dotnet-core-cli>
+# test
 
-<https://www.youtube.com/watch?v=z7G6HV7WWz0>
+Creare la TDipendenti con i seguenti campi (scegliere i tipi di dati adatti)
+DipendenteID
+Cognome
+Nome
+DataNascita
+Sesso
+ComuneNascita
+ProvinciaNascita
+Email
 
-<https://learn.microsoft.com/en-us/ef/core/get-started/overview/first-app?tabs=netcore-cli>
+Caricare 3 Dipendenti (ComuneNascita e ProvinciaNascita devono essere presenti nella tabella successiva)
 
-<https://learn.microsoft.com/en-us/ef/core/managing-schemas/migrations/?tabs=dotnet-core-cli>
+Creare la TComuni con i seguenti campi (scegliere i tipi di dati adatti):
+ComuneID
+Comune
+Provincia
+CodiceCatastale
 
-<https://learn.microsoft.com/en-us/ef/core/get-started/overview/first-app?tabs=netcore-cli>
+Inserire 3 righe utili per i 3 dipendenti della TDipendenti.
+ComuneID
+COMUNE
+PROVINCIA
+CODICE CATASTALE
+1
+PADOVA
+PD
+G224
+2
+VICENZA
+VI
+L840
+3
+TREVISO
+TV
+L407
 
-<https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis/route-handlers?view=aspnetcore-8.0>
+Creare un nuovo progetto Visual studio API web .net core
+Creare Controller Dipendenti e le seguenti chiamate:
+HttpGet: restituisce la lista di tutti i dipendenti
+HttpGet: restituisce un solo dipendente tramite invio DipendenteID. Se il DipendenteID non esiste lo comunica
+HttpPost: Inserimento di un nuovo dipendente inviato tramite post
+HttpDelete: eliminazione dipendente tramite invio DipendenteID. Se il DipendenteID non esiste lo comunica
+HttpPut: aggiornamento della Email del Dipendente tramite invio del DipendenteID e della nuova Email. Se il DipendenteID non esiste lo comunica
+HttpGet: restituisce il CodiceFiscale del Dipendente inviato tramite DipendenteID. Se il DipendenteID non esiste lo comunica
 
-nuget packages
+Nelle chiamate che ricevono dati implementare i test di obbligatorietà dei dati (per esempio la numero 2.3 deve ricevere dati non vuoti altrimenti comunica un messaggio di errore nel Response)
 
-<https://www.syncfusion.com/blogs/post/10-best-c-nuget-packages-to-improve-your-productivity-in-2022.aspx>
+Zippare la cartella della soluzione in un unico file CognomeNome.zip e inviarlo a <roberto.luongo@itsdigitalacademy.com> tramite wetransfer.com
 
-caching
+# how to run
 
-<https://www.youtube.com/watch?v=_bg5dGnudPs>
-
-auth
-
-<https://learn.microsoft.com/en-us/aspnet/core/security/authentication/identity?view=aspnetcore-8.0&tabs=visual-studio>
-
-<https://www.youtube.com/watch?v=sZnu-TyaGNk>
+**requirement**
