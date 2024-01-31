@@ -75,7 +75,7 @@ public class AppDbContext : DbContext
           Id = Guid.NewGuid(),
           Name = "John1",
           Surname = "Doe",
-          BirthDate = DateTime.Now,
+          BirthDate = new DateOnly(),
           Gender = "Male",
           Email = "ok@gipo.dev",
           TownId = padovaId
@@ -89,7 +89,7 @@ public class AppDbContext : DbContext
           Id = Guid.NewGuid(),
           Name = "John2",
           Surname = "Doe",
-          BirthDate = DateTime.Now,
+          BirthDate = new DateOnly(),
           Gender = "Male",
           Email = "ok@gipo.dev",
           TownId = vicenzaId
@@ -103,7 +103,7 @@ public class AppDbContext : DbContext
           Id = Guid.NewGuid(),
           Name = "John3",
           Surname = "Doe",
-          BirthDate = DateTime.Now,
+          BirthDate = new DateOnly(),
           Gender = "Male",
           Email = "ok@gipo.dev",
           TownId = trevisoId
