@@ -1,5 +1,11 @@
 namespace Controllers.Employee;
 
+public interface IEmployeeResponse
+{
+  bool ok { get; set; }
+  string? message { get; set; }
+}
+
 public static partial class EmployeesController
 {
   public static RouteGroupBuilder MapEmployeesApi(this RouteGroupBuilder group)

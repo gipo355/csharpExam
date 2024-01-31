@@ -2,6 +2,15 @@ namespace Controllers.Employee;
 
 using System.Text.Json;
 using Data;
+using Models.Employee;
+
+public record GetAllResponse : IEmployeeResponse
+{
+  public bool ok { get; set; }
+  public string? message { get; set; }
+
+  public List<Employee>? data { get; set; }
+}
 
 // TODO: hide some fields from the response
 // TODO: add query params for filtering
@@ -31,9 +40,7 @@ public static partial class EmployeesController
 
       context.Response.StatusCode = 500;
 
-      await context.Response.WriteAsJsonAsync(
-        new { ok = false, message = "Something went wrong!" }
-      );
+      await context.Response.WriteAsJsonAsync(new { ok = false, message = e.Message });
 
       return;
     }

@@ -28,11 +28,9 @@ public class AppDbContext : DbContext
   {
     // modelBuilder.Entity<Blog>().Property(e => e.BlogId).HasDefaultValueSql("now()");
     // modelBuilder.Entity<Blog>().ComplexProperty
-    // SEED town data
-    //
 
+    // SEED town data
     // NOTE: offset is required for postgresql
-    // var birhdate = new DateTimeOffset().Date;
     var birthdate = new DateTimeOffset(new DateTime(2015, 12, 31));
     var padovaId = Guid.NewGuid();
     var vicenzaId = Guid.NewGuid();

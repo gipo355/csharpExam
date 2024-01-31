@@ -1,31 +1,35 @@
-GET http://localhost:5090/api/v1/animals
+GET http://localhost:5118/api/v1/employees
 
 ###
 
-GET http://localhost:5090/api/v1/animals/1
+GET http://localhost:5118/api/v1/employees/
 
 ###
 
-POST http://localhost:5118/api/v1/animals
+POST http://localhost:5118/api/v1/employees
 content-type: application/json
 
 {
-    "name": "Test",
-    "age": 5,
-    "type": "Mammal"
+    "name": "Foo",
+    "surname": 5,
+    "gender": "male",
+    "email": "foo@gipo.dev",
+    "town": "Padova"
 }
 
 ###
 
-DELETE http://localhost:5090/api/v1/animals/1
+DELETE http://localhost:5090/api/v1/employees
 
 ###
 
-PATCH http://localhost:5090/api/v1/animals/1
+PATCH http://localhost:5090/api/v1/employees/
 Content-Type: application/json
 
 {
-    "name": "Changed",
-    "age": 5,
-    "type": "Mammal"
+    "name": "changed",
+    "surname": 5,
+    "gender": "male",
+    "email": "foo@gipo.dev",
+    "town": "Padova"
 }
