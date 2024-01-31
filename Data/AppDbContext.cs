@@ -1,7 +1,5 @@
 namespace Data;
 
-// TODO: how to make fields required, unique, other props on db?
-
 // using System.Collections.Generic;
 using Config;
 using Microsoft.EntityFrameworkCore;
