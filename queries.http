@@ -2,7 +2,7 @@ GET http://localhost:5118/api/v1/employees
 
 ###
 
-GET http://localhost:5118/api/v1/employees/
+GET http://localhost:5118/api/v1/employees/ae78434d-1588-410c-8596-86decf60ee21
 
 ###
 
@@ -15,24 +15,23 @@ content-type: application/json
   "gender": "male",
   "email": "foo@gipo.dev",
   "birthdate": "2015-12-30T23:00:00+00",
-  "town": {
-        "name": "Padova"
-  }
+  "town": "Padova"
 }
 
 ###
 
-DELETE http://localhost:5090/api/v1/employees
+DELETE http://localhost:5118/api/v1/employees/ae78434d-1588-410c-8596-86decf60ee21
 
 ###
 
-PATCH http://localhost:5090/api/v1/employees/
+PATCH http://localhost:5118/api/v1/employees/ae78434d-1588-410c-8596-86decf60ee21
 Content-Type: application/json
 
 {
     "name": "changed",
-    "surname": 5,
+    "surname": "changed",
     "gender": "male",
     "email": "foo@gipo.dev",
+    "birthdate": "2015-12-30T23:00:00+00",
     "town": "Padova"
 }

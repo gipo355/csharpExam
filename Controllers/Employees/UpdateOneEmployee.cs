@@ -4,6 +4,25 @@ using Data;
 using Models.Employee;
 using Models.Town;
 
+public record UpdateOneRequest
+{
+  public Guid? Id { get; set; }
+
+  public string? Name { get; set; }
+
+  public string? Surname { get; set; }
+
+  public DateTime BirthDate { get; set; }
+
+  public string? Gender { get; set; }
+
+  public string? Email { get; set; }
+
+  public string? FiscalCode { get; set; }
+
+  public string? Town { get; set; }
+}
+
 public static partial class EmployeesController
 {
   public static async Task<IResult> UpdateOneEmployee(
