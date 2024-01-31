@@ -1,7 +1,9 @@
-using Controllers.Animals;
+using Controllers.Employee;
 using Data;
-using Microsoft.AspNetCore.Identity;
-using Models.User;
+
+// using Microsoft.AspNetCore.Identity;
+
+// using Models.User;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,8 +14,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDbContext>();
 builder.Services.AddRazorPages();
 builder.Services.AddOutputCache();
-builder.Services.AddAuthentication().AddBearerToken(IdentityConstants.BearerScheme);
-builder.Services.AddAuthorizationBuilder();
+
+// builder.Services.AddAuthentication().AddBearerToken(IdentityConstants.BearerScheme);
+// builder.Services.AddAuthorizationBuilder();
 
 // builder.Services.AddIdentity<User, Role>().AddEntityFrameworkStores<UserDbContext>();
 
@@ -56,14 +59,15 @@ if (!app.Environment.IsDevelopment())
   app.UseHsts();
 }
 
-app.UseHttpsRedirection();
+// app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.MapRazorPages();
 app.UseOutputCache();
 
 // ##### Map endpoints
 
-app.MapGroup("/api/v1/employees").MapAnimalsApi().WithOpenApi();
-app.MapGroup("/api/v1/towns").MapAnimalsApi().WithOpenApi();
+app.MapGroup("/api/v1/employees").MapEmployeesApi().WithOpenApi();
+
+// app.MapGroup("/api/v1/towns").MapAnimalsApi().WithOpenApi();
 
 app.Run();

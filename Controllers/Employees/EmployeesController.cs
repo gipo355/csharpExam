@@ -1,18 +1,18 @@
-namespace Controllers.Animals;
+namespace Controllers.Employee;
 
-public static partial class AnimalsController
+public static partial class EmployeesController
 {
-  public static RouteGroupBuilder MapAnimalsApi(this RouteGroupBuilder group)
+  public static RouteGroupBuilder MapEmployeesApi(this RouteGroupBuilder group)
   {
-    group.MapGet("/", GetAllAnimals).CacheOutput(x => x.Expire(TimeSpan.FromMicroseconds(5)));
+    group.MapGet("/", GetAllEmployees).CacheOutput(x => x.Expire(TimeSpan.FromMicroseconds(5)));
 
-    group.MapGet("/{id}", GetOneAnimal);
+    group.MapGet("/{id}", GetOneEmployee);
 
-    group.MapPost("/", CreateOneAnimal);
+    group.MapPost("/", CreateOneEmployee);
 
-    group.MapPatch("/{id}", UpdateOneAnimal);
+    group.MapPatch("/{id}", UpdateOneEmployee);
 
-    group.MapDelete("/{id}", DeleteOneAnimal);
+    group.MapDelete("/{id}", DeleteOneEmployee);
 
     return group;
   }

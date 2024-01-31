@@ -15,5 +15,7 @@ public class Town
 
   public string? Province { get; set; }
 
+  public string? CodiceCatastale { get; set; }
+
   public List<Employee>? Employees { get; set; }
 }

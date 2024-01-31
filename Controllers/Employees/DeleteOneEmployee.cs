@@ -1,17 +1,17 @@
-namespace Controllers.Animals;
+namespace Controllers.Employee;
 
 using Data;
-using Models.Animal;
+using Models.Employee;
 
-public static partial class AnimalsController
+public static partial class EmployeesController
 {
-  public static async Task DeleteOneAnimal(Guid id, HttpContext context, AppDbContext db)
+  public static async Task DeleteOneEmployee(Guid id, HttpContext context, AppDbContext db)
   {
     try
     {
       Console.WriteLine(id);
 
-      db.Animals.Remove(new Animal { Id = id });
+      db.Employees.Remove(new Employee { Id = id });
 
       await db.SaveChangesAsync();
 

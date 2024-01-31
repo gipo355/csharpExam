@@ -1,17 +1,17 @@
-namespace Controllers.Animals;
+namespace Controllers.Employee;
 
 using System.Text.Json;
 using Data;
 
 // TODO: hide some fields from the response
 // TODO: add query params for filtering
-public static partial class AnimalsController
+public static partial class EmployeesController
 {
-  public static async Task GetAllAnimals(HttpContext context, AppDbContext db)
+  public static async Task GetAllEmployees(HttpContext context, AppDbContext db)
   {
     try
     {
-      var animals = db.Animals.ToList();
+      var employees = db.Employees.ToList();
 
       var cookies = context.Request.Cookies.ToList();
       // var headers = context.Request.Headers.ToList();
@@ -21,13 +21,13 @@ public static partial class AnimalsController
       // context.Response.Headers.ContentType = "application/json";
       context.Response.Headers.SetCookie = "testCookie=testValue";
 
-      await context.Response.WriteAsJsonAsync(new { status = "success", data = animals });
+      await context.Response.WriteAsJsonAsync(new { status = "success", data = employees });
 
       return;
     }
     catch (Exception e)
     {
-      Log.Logger.Error(e, "Error getting all animals");
+      Log.Logger.Error(e, "Error getting all employees");
 
       context.Response.StatusCode = 500;
 

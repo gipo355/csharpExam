@@ -24,14 +24,93 @@ public class AppDbContext : DbContext
 
     optionsBuilder.UseNpgsql(this.connectionString);
 
-  // protected override void OnModelCreating(ModelBuilder modelBuilder)
-  // {
-  //   // modelBuilder.Entity<Blog>().Property(e => e.BlogId).HasDefaultValueSql("now()");
-  //   // modelBuilder.Entity<Blog>().ComplexProperty
-  // }
+  protected override void OnModelCreating(ModelBuilder modelBuilder)
+  {
+    // modelBuilder.Entity<Blog>().Property(e => e.BlogId).HasDefaultValueSql("now()");
+    // modelBuilder.Entity<Blog>().ComplexProperty
+    // SEED town data
+    //
+    var padovaId = Guid.NewGuid();
+    var vicenzaId = Guid.NewGuid();
+    var trevisoId = Guid.NewGuid();
+    modelBuilder
+      .Entity<Town>()
+      .HasData(
+        new Town
+        {
+          Id = padovaId,
+          Name = "Padova",
+          Province = "PD",
+          CodiceCatastale = "G224"
+        }
+      );
+    modelBuilder
+      .Entity<Town>()
+      .HasData(
+        new Town
+        {
+          Id = vicenzaId,
+          Name = "Vicenza",
+          Province = "VI",
+          CodiceCatastale = "L840"
+        }
+      );
+    modelBuilder
+      .Entity<Town>()
+      .HasData(
+        new Town
+        {
+          Id = trevisoId,
+          Name = "Treviso",
+          Province = "TV",
+          CodiceCatastale = "L407"
+        }
+      );
+    // SEED employee data
+    modelBuilder
+      .Entity<Employee>()
+      .HasData(
+        new Employee
+        {
+          Id = Guid.NewGuid(),
+          Name = "John1",
+          Surname = "Doe",
+          BirthDate = DateTime.Now,
+          Gender = "Male",
+          Email = "ok@gipo.dev",
+          TownId = padovaId
+        }
+      );
+    modelBuilder
+      .Entity<Employee>()
+      .HasData(
+        new Employee
+        {
+          Id = Guid.NewGuid(),
+          Name = "John2",
+          Surname = "Doe",
+          BirthDate = DateTime.Now,
+          Gender = "Male",
+          Email = "ok@gipo.dev",
+          TownId = vicenzaId
+        }
+      );
+    modelBuilder
+      .Entity<Employee>()
+      .HasData(
+        new Employee
+        {
+          Id = Guid.NewGuid(),
+          Name = "John3",
+          Surname = "Doe",
+          BirthDate = DateTime.Now,
+          Gender = "Male",
+          Email = "ok@gipo.dev",
+          TownId = trevisoId
+        }
+      );
+  }
 
-  // public DbSet<Post> Posts { get; set; }
-  // public DbSet<Blog> Blogs { get; set; }
   public DbSet<Employee> Employees { get; set; }
   public DbSet<Town> Towns { get; set; }
 }
