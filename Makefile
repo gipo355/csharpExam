@@ -18,7 +18,8 @@ db-drop:
 db-reset: db-drop db-update
 
 restore:
-	@echo "Restoring packages..."
+	@echo "Restoring packages and tools..."
+	@dotnet tool restore
 	@dotnet restore
 	@echo "Done."
 
